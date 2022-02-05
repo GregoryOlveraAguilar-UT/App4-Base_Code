@@ -25,7 +25,196 @@ blah, blah, blah, blah
 
    <head> 
       
-	   PUT YOUR OLD CODE IN HERE
+<title>Hello World</title>  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+   </head> 
+
+
+<script>
+        var allergy_count = 0; // This serves to create a box in order to store all the allergy counts in, the counts begin at 0
+        var cold_count = 0; // Same thing here, except its for cold counts now
+
+
+        function allergyAdd(){
+            allergy_count = allergy_count + 1; // This function relates to the onclick button code below, the button will run command this when clicked
+
+        }
+
+        function coldAdd(){
+            cold_count = cold_count + 1; // This means that every time a button runs this command it will add 1 count to the variable "box" we created above
+        }
+		
+        
+        
+        function computeResults(){ // Created a function to produce results and named it in order for the button to recognize what to do.
+        	var allergyPercent = (allergy_count/6)*100 // This takes all the allergy counts gathered from the buttons, divides by 6 b/c 6 qs and multiples it by 100 to get a percentage.
+           	var coldPercent = (cold_count/6)*100 //Same things here except its with the cold counts. Also variables serve as a box w/ labels to put stuff like counts in.
+		var resultText = document.getElementById("results"); // This is done in order to capture the results paragraph that I created in page seven below.
+            resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%" + "<br> Probability it is a cold = " + coldPercent + "%"; // This is done in order to replace what I captured withmy results along with a % sign.
+         }        
+  </script>
+
+
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+
+<body>
+<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Cold or Allergies?</h1> 
+</div>
+	
+<div id="content" class="w3-container">
+	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+   
+</div>
+	
+	<footer class="w3-bottom w3-container w3-flat-carrot"> 
+		<p>DIY!</p>
+		</footer>	
+	</div>
+
+<div class="page" id="one">  <!-- This identifies the page as page one for the href of the button to know where to go when clicked -->
+	<div id="header" class="w3-container w3-flat-carrot">  <!-- This creates the header for the page with the relevent text below it, I added this to all pages-->
+		<h1>Question 1</h1> <!-- This is the text that will be displayed in the header -->
+	</div>
+	
+    	<div id="content" class="w3-container">
+        	<p>Are your eyes watery or itchy?</p> 
+			<a href="#two" onclick="allergyAdd();" class="w3-btn w3-black">Yes</a>  <!-- href tells the button which page to go to -->
+			<a href="#two" onclick="coldAdd();" class="w3-btn w3-black">No</a>  <!-- The onclick command serves to tell the button which command from the script to execute -->
+	</div> 
+	
+	<footer class="w3-bottom w3-container w3-flat-carrot"> <!-- This is to set up the footer for this page, I added this to the end of each page -->
+		<p>DIY!</p> <!-- This is what text will be displayed in the space for the footer -->
+		</footer>	
+	</div>	<!-- This comment serves to show where page one ends -->
+
+<div class="page" id="two"> <!-- This comment serves as the beginning of page two with the relevant content and actions below -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 2</h1> <!-- This is the text that will be displayed in the header -->
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have a fever?</p>
+        		<a href="#three" onclick="coldAdd();" class="w3-btn w3-black">Yes</a> <!-- The class part of this code serves to create the button (btn) and its specific color (black) -->
+			<a href="#three" onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+	
+	</div> 
+	
+	<footer class="w3-bottom w3-container w3-flat-carrot">
+		<p>DIY!</p> <!-- This is what text will be displayed in the space for the footer -->
+		</footer>	
+	</div>	<!-- This comment serves to show where page two ends -->
+
+<div class="page" id="three"> <!-- This comemnt serves as the beginning of page three with the relevant content and actions below -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1> <!-- This is the text that will be displayed in the header -->
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have a sore throat?</p>
+      			<a href="#four" onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
+			<a href="#four" onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+		</div> 
+	
+	<footer class="w3-bottom w3-container w3-flat-carrot">
+		<p>DIY!</p> <!-- This is what text will be displayed in the space for the footer -->
+		</footer>	
+	</div> <!-- This comment serves to show where page three ends -->
+	
+<div class="page" id="four"> <!-- This comment serves as the beginning of page four with the relevant content and actions below -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1> <!-- This is the text that will be displayed in the header -->
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Are your symptoms seasonal or chronic?</p>
+        		<a href="#five" onclick="allergyAdd();" class="w3-btn w3-black">Yes</a>
+			<a href="#five" onclick="coldAdd();" class="w3-btn w3-black">No</a>
+    </div>
+	
+	<footer class="w3-bottom w3-container w3-flat-carrot">
+		<p>DIY!</p> <!-- This is what text will be displayed in the space for the footer -->
+		</footer>	
+	</div>	<!-- This comment serves to show where page four ends -->
+
+<div class="page" id="five"> <!-- This comment serves as the beginning of page five with the relevant content and actions below -->
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 5</h1> <!-- This is the text that will be displayed in the header -->
+	</div> 
+	
+    	<div id="content" class="w3-container">
+        	<p>Do you have a "wet" hacking cough?</p> 
+			<a href="#six" onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
+			<a href="#six" onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+	</div>
+	
+	<footer class="w3-bottom w3-container w3-flat-carrot">
+		<p>DIY!</p> <!-- This is what text will be displayed in the space for the footer -->
+		</footer>	
+	</div> <!-- This comment serves to show where page five ends -->
+	
+<div class="page" id="six"> <!-- This comment serves as the beginning of page six with the relevant content and actions below -->
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 6</h1> <!-- This is the text that will be displayed in the header -->
+	</div>
+	
+    	<div id="content" class="w3-container">
+        	<p>Do you have a runny nose with thin, watery discharge?</p> 
+			<a href="#seven" onclick="allergyAdd();" class="w3-btn w3-black">Yes</a>
+			<a href="#seven" onclick="coldAdd();" class="w3-btn w3-black">No</a>
+	</div>
+	
+	<footer class="w3-bottom w3-container w3-flat-carrot"> <!-- Footer for page six -->
+		<p>DIY!</p> <!-- This is what text will be displayed in the space for the footer -->
+		</footer>	
+	</div> <!-- This comment serves to show where page six ends -->
+	
+<div class="page" id="seven"> <!-- This comment serves as the beginning of page seven with the relevant content and actions below -->
+	<div class="w3-container w3-flat-carrot">
+    		<h1>Results</h1> <!-- This is the text that will be displayed in the header -->
+            </div>
+    
+    <p id="results"></p> <!-- This is a placeholder for the command computeResults to be able to display the results in this spot -->
+    
+	<div id="content" class="w3-container">
+        <a href="#seven" onclick="computeResults();" class="w3-btn w3-black">Click here to view your results</a> <!-- This button runs the computeResults comamnd when clicked -->
+
+</div>
+	
+	<footer class="w3-bottom w3-container w3-flat-carrot">
+		<p>DIY!</p> <!-- This is what text will be displayed in the space for the footer -->
+		</footer>	
+	</div>	<!-- This comment serves to show where page seven ends -->
+	
 	   
    </body>
 </html>
