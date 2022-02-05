@@ -86,15 +86,23 @@ blah, blah, blah, blah
     left: 0vw;
     z-index: 1;
 }
+       .row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
 </style>
 
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>Cold or Allergies?</h1> 
+	<h1>Measles or Chicken Pox (Varicella)?</h1> 
 </div>
 	
 <div id="content" class="w3-container">
-	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	<p>AAre you experiencing itchy rashes and not sure whether it could be Measles or Chicken Pox (Varicella)? Answer a few short questions to find out!</p>
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
 	
@@ -102,6 +110,17 @@ blah, blah, blah, blah
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
    
+<div class="row">
+  <div class="column">
+    <h2>The Measles Virus</h2>
+    <img src="https://c.files.bbci.co.uk/9C2A/production/_110287993_f0172495-measles_virus_illustration-spl.jpg" alt="Measles" style="width:100%">
+  
+</div>
+  <div class="column">
+    	<h2>The Varicella Virus</h2>
+    	<img src="https://media.sciencephoto.com/f0/30/43/75/f0304375-800px-wm.jpg" alt="Chicken Pox" style="width:100%">
+</div>
+	   
 </div>
 	
 	<footer class="w3-bottom w3-container w3-flat-carrot"> 
