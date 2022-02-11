@@ -24,6 +24,7 @@ Image not resizing
 Results not outputting
 Half of results not outputting
 Incorrect counts
+Style comment does not grey out when in between the style boxes
 
 -->
 
@@ -91,12 +92,12 @@ Incorrect counts
     z-index: 1;
 }
 
-img, object { //This allows the image to resize based on the screen size rather than having a set number that does not change
+img, object { 
         max-height:90%;
         max-width:90%;
 }
 </style>
-
+<!-- "The img, object {" allows the image to resize based on the screen size rather than having a set number that does not change -->
 
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
