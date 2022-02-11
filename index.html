@@ -42,26 +42,26 @@ blah, blah, blah, blah
        console.log("This file last modified  " + docMod);*/ 
 // If you find the alert box annoying, comment out that line and timestamp will still show up in the debugging console
 	
-        var measles_count = 0; // This serves to create a box in order to store all the allergy counts in, the counts begin at 0
+        var measles_count = 0; // This serves to create a box in order to store all the measles counts in, the counts begin at 0
         var pox_count = 0; // Same thing here, except its for chicken pox counts now
 
 
-        function allergyAdd(){
+        function measlesAdd(){
             measles_count = measles_count + 1; // This function relates to the onclick button code below, the button will run command this when clicked
 
         }
 
-        function coldAdd(){
+        function poxAdd(){
             pox_count = pox_count + 1; // This means that every time a button runs this command it will add 1 count to the variable "box" we created above
         }
 		
         
         
         function computeResults(){ // Created a function to produce results and named it in order for the button to recognize what to do.
-        	var allergyPercent = (measles_count/6)*100 // This takes all the allergy counts gathered from the buttons, divides by 6 b/c 6 qs and multiples it by 100 to get a percentage.
-           	var coldPercent = (pox_count/6)*100 //Same things here except its with the chicken pox counts. Also variables serve as a box w/ labels to put stuff like counts in.
+        	var measlesPercent = (measles_count/6)*100 // This takes all the measles counts gathered from the buttons, divides by 6 b/c 6 qs and multiples it by 100 to get a percentage.
+           	var poxPercent = (pox_count/6)*100 //Same things here except its with the chicken pox counts. Also variables serve as a box w/ labels to put stuff like counts in.
 		var resultText = document.getElementById("results"); // This is done in order to capture the results paragraph that I created in page seven below.
-            resultText.innerHTML = "Probability it is measles = " + allergyPercent + "%" + "<br> Probability it is chickenpox = " + coldPercent + "%"; // This is done in order to replace what I captured withmy results along with a % sign.
+            resultText.innerHTML = "Probability it is measles = " + measlesPercent + "%" + "<br> Probability it is chickenpox = " + poxPercent + "%"; // This is done in order to replace what I captured withmy results along with a % sign.
          }        
   </script>
 
@@ -124,8 +124,8 @@ img, object{
 	
     	<div id="content" class="w3-container">
         	<p>Are your eyes watery or itchy?</p> 
-			<a href="#two" onclick="allergyAdd();" class="w3-btn w3-black">Yes</a>  <!-- href tells the button which page to go to -->
-			<a href="#two" onclick="coldAdd();" class="w3-btn w3-black">No</a>  <!-- The onclick command serves to tell the button which command from the script to execute -->
+			<a href="#two" onclick="measlesAdd();" class="w3-btn w3-black">Yes</a>  <!-- href tells the button which page to go to -->
+			<a href="#two" onclick="poxAdd();" class="w3-btn w3-black">No</a>  <!-- The onclick command serves to tell the button which command from the script to execute -->
 	</div> 
 	
 	<footer class="w3-bottom w3-container w3-flat-carrot"> <!-- This is to set up the footer for this page, I added this to the end of each page -->
@@ -140,8 +140,8 @@ img, object{
 	
 	<div id="content" class="w3-container">
 		<p>Do you have a runny nose?</p>
-        		<a href="#three" onclick="allergyAdd();" class="w3-btn w3-black">Yes</a> <!-- The class part of this code serves to create the button (btn) and its specific color (black) -->
-			<a href="#three" onclick="coldAdd();" class="w3-btn w3-black">No</a>
+        		<a href="#three" onclick="measlesAdd();" class="w3-btn w3-black">Yes</a> <!-- The class part of this code serves to create the button (btn) and its specific color (black) -->
+			<a href="#three" onclick="poxAdd();" class="w3-btn w3-black">No</a>
 	
 	</div> 
 	
@@ -157,8 +157,8 @@ img, object{
 	
 	<div id="content" class="w3-container">
 		<p>Do you have a sore throat?</p>
-      			<a href="#four" onclick="allergyAdd();" class="w3-btn w3-black">Yes</a>
-			<a href="#four" onclick="coldAdd();" class="w3-btn w3-black">No</a>
+      			<a href="#four" onclick="measlesAdd();" class="w3-btn w3-black">Yes</a>
+			<a href="#four" onclick="poxAdd();" class="w3-btn w3-black">No</a>
 		</div> 
 	
 	<footer class="w3-bottom w3-container w3-flat-carrot">
@@ -173,8 +173,8 @@ img, object{
 	
 	<div id="content" class="w3-container">
 		<p>Did your rash first appear on your chest and/or back?</p>
-        		<a href="#five" onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
-			<a href="#five" onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+        		<a href="#five" onclick="poxAdd();" class="w3-btn w3-black">Yes</a>
+			<a href="#five" onclick="measlesAdd();" class="w3-btn w3-black">No</a>
     </div>
 	
 	<footer class="w3-bottom w3-container w3-flat-carrot">
@@ -189,8 +189,8 @@ img, object{
 	
     	<div id="content" class="w3-container">
         	<p>Are your blisters filled with fluid?</p> 
-			<a href="#six" onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
-			<a href="#six" onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+			<a href="#six" onclick="poxAdd();" class="w3-btn w3-black">Yes</a>
+			<a href="#six" onclick="measlesAdd();" class="w3-btn w3-black">No</a>
 	</div>
 	
 	<footer class="w3-bottom w3-container w3-flat-carrot">
@@ -205,8 +205,8 @@ img, object{
 	
     	<div id="content" class="w3-container">
         	<p>Does your mouth have small-whitish sores?</p> 
-			<a href="#seven" onclick="allergyAdd();" class="w3-btn w3-black">Yes</a>
-			<a href="#seven" onclick="coldAdd();" class="w3-btn w3-black">No</a>
+			<a href="#seven" onclick="measlesAdd();" class="w3-btn w3-black">Yes</a>
+			<a href="#seven" onclick="poxAdd();" class="w3-btn w3-black">No</a>
 	</div>
 	
 	<footer class="w3-bottom w3-container w3-flat-carrot"> <!-- Footer for page six -->
