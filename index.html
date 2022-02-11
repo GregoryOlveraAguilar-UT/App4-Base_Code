@@ -42,26 +42,26 @@ blah, blah, blah, blah
        console.log("This file last modified  " + docMod);*/ 
 // If you find the alert box annoying, comment out that line and timestamp will still show up in the debugging console
 	
-        var allergy_count = 0; // This serves to create a box in order to store all the allergy counts in, the counts begin at 0
-        var cold_count = 0; // Same thing here, except its for cold counts now
+        var measles_count = 0; // This serves to create a box in order to store all the allergy counts in, the counts begin at 0
+        var pox_count = 0; // Same thing here, except its for chicken pox counts now
 
 
         function allergyAdd(){
-            allergy_count = allergy_count + 1; // This function relates to the onclick button code below, the button will run command this when clicked
+            measles_count = measles_count + 1; // This function relates to the onclick button code below, the button will run command this when clicked
 
         }
 
         function coldAdd(){
-            cold_count = cold_count + 1; // This means that every time a button runs this command it will add 1 count to the variable "box" we created above
+            pox_count = pox_count + 1; // This means that every time a button runs this command it will add 1 count to the variable "box" we created above
         }
 		
         
         
         function computeResults(){ // Created a function to produce results and named it in order for the button to recognize what to do.
-        	var allergyPercent = (allergy_count/6)*100 // This takes all the allergy counts gathered from the buttons, divides by 6 b/c 6 qs and multiples it by 100 to get a percentage.
-           	var coldPercent = (cold_count/6)*100 //Same things here except its with the cold counts. Also variables serve as a box w/ labels to put stuff like counts in.
+        	var allergyPercent = (measles_count/6)*100 // This takes all the allergy counts gathered from the buttons, divides by 6 b/c 6 qs and multiples it by 100 to get a percentage.
+           	var coldPercent = (pox_count/6)*100 //Same things here except its with the chicken pox counts. Also variables serve as a box w/ labels to put stuff like counts in.
 		var resultText = document.getElementById("results"); // This is done in order to capture the results paragraph that I created in page seven below.
-            resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%" + "<br> Probability it is a cold = " + coldPercent + "%"; // This is done in order to replace what I captured withmy results along with a % sign.
+            resultText.innerHTML = "Probability it is measles = " + allergyPercent + "%" + "<br> Probability it is chickenpox = " + coldPercent + "%"; // This is done in order to replace what I captured withmy results along with a % sign.
          }        
   </script>
 
@@ -86,33 +86,32 @@ blah, blah, blah, blah
     left: 0vw;
     z-index: 1;
 }
-	img, object{
+
+img, object{
             	max-height:90%;
-        	max-width:90%;
-}
-	
+        		max-width:90%;
+        	}
 </style>
+
 
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>Measles or Chicken Pox (Varicella)?</h1> 
+	<h1>Measles or Chicken Pox?</h1> 
+    
 </div>
 	
 <div id="content" class="w3-container">
-	<p>Are you experiencing itchy rashes and not sure whether it could be Measles or Chicken Pox (Varicella)? Answer a few short questions to find out!</p>
+	<p>Are you experiencing itchy rashes and not sure whether it could be Measles or Chicken Pox? Answer a few short questions to find out!</p>
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
 	
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
-   
-		<img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/322/322637/chickenpox-vs-measles-infographic-br-image-credit-stephen-kelly-2018-br.jpg" alt="Infograph" width="400" height="420">
+    
+<img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/322/322637/chickenpox-vs-measles-infographic-br-image-credit-stephen-kelly-2018-br.jpg" alt="Trulli" width="400" height="420">
 
-	</div>
-	   
-</div>
-	
+</div>	
 	<footer class="w3-bottom w3-container w3-flat-carrot"> 
 		<p>DIY!</p>
 		</footer>	
@@ -140,9 +139,9 @@ blah, blah, blah, blah
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Do you have a fever?</p>
-        		<a href="#three" onclick="coldAdd();" class="w3-btn w3-black">Yes</a> <!-- The class part of this code serves to create the button (btn) and its specific color (black) -->
-			<a href="#three" onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+		<p>Do you have a runny nose?</p>
+        		<a href="#three" onclick="allergyAdd();" class="w3-btn w3-black">Yes</a> <!-- The class part of this code serves to create the button (btn) and its specific color (black) -->
+			<a href="#three" onclick="coldAdd();" class="w3-btn w3-black">No</a>
 	
 	</div> 
 	
@@ -158,8 +157,8 @@ blah, blah, blah, blah
 	
 	<div id="content" class="w3-container">
 		<p>Do you have a sore throat?</p>
-      			<a href="#four" onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
-			<a href="#four" onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+      			<a href="#four" onclick="allergyAdd();" class="w3-btn w3-black">Yes</a>
+			<a href="#four" onclick="coldAdd();" class="w3-btn w3-black">No</a>
 		</div> 
 	
 	<footer class="w3-bottom w3-container w3-flat-carrot">
@@ -173,9 +172,9 @@ blah, blah, blah, blah
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Are your symptoms seasonal or chronic?</p>
-        		<a href="#five" onclick="allergyAdd();" class="w3-btn w3-black">Yes</a>
-			<a href="#five" onclick="coldAdd();" class="w3-btn w3-black">No</a>
+		<p>Did your rash first appear on your chest and/or back?</p>
+        		<a href="#five" onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
+			<a href="#five" onclick="allergyAdd();" class="w3-btn w3-black">No</a>
     </div>
 	
 	<footer class="w3-bottom w3-container w3-flat-carrot">
@@ -189,7 +188,7 @@ blah, blah, blah, blah
 	</div> 
 	
     	<div id="content" class="w3-container">
-        	<p>Do you have a "wet" hacking cough?</p> 
+        	<p>Are your blisters filled with fluid?</p> 
 			<a href="#six" onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
 			<a href="#six" onclick="allergyAdd();" class="w3-btn w3-black">No</a>
 	</div>
@@ -205,7 +204,7 @@ blah, blah, blah, blah
 	</div>
 	
     	<div id="content" class="w3-container">
-        	<p>Do you have a runny nose with thin, watery discharge?</p> 
+        	<p>Does your mouth have small-whitish sores?</p> 
 			<a href="#seven" onclick="allergyAdd();" class="w3-btn w3-black">Yes</a>
 			<a href="#seven" onclick="coldAdd();" class="w3-btn w3-black">No</a>
 	</div>
